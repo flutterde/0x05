@@ -7,6 +7,8 @@
 *.o
 *.obj
 
+
+ex00/app
 # Precompiled Headers
 *.gch
 *.pch
