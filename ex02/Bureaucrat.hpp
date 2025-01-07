@@ -16,7 +16,7 @@
 # include "AForm.hpp"
 
 # ifndef IS_DEBUG_MODE
-#define	IS_DEBUG_MODE 1
+#define	IS_DEBUG_MODE 0
 # endif
 
 class	AForm;

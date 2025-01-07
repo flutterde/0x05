@@ -6,7 +6,7 @@
 /*   By: ochouati <ochouati@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 17:07:57 by ochouati          #+#    #+#             */
-/*   Updated: 2025/01/07 13:18:51 by ochouati         ###   ########.fr       */
+/*   Updated: 2025/01/07 17:11:39 by ochouati         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ AForm::AForm(void) : name("default_name"), gradeToSign(50), gradeToExecute(50)
 
 AForm::~AForm(void)
 {
-	std::cout << "AForm Destructor called" << std::endl;
+	if (IS_DEBUG_MODE)
+		std::cout << "AForm Destructor called" << std::endl;
 }
 
 AForm::AForm(const AForm& obj) : name(obj.name), gradeToSign(obj.gradeToSign), gradeToExecute(obj.gradeToExecute)
@@ -44,7 +45,8 @@ AForm::AForm(std::string _name, int _gradeToSign, int _gradeToExecute) : name(_n
 
 AForm& AForm::operator=(const AForm& obj)
 {
-	std::cout << "AForm Copy assignment operator called" << std::endl;
+	if (IS_DEBUG_MODE)
+		std::cout << "AForm Copy assignment operator called" << std::endl;
 	if (this != &obj)
 	{
 		this->isSigned = obj.isSigned;
