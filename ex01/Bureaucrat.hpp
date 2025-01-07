@@ -13,9 +13,13 @@
 #ifndef BUREAUCRAT_HPP 
 #define BUREAUCRAT_HPP
 # include <iostream>
+# include "Form.hpp"
 
+# ifndef IS_DEBUG_MODE
 #define	IS_DEBUG_MODE 1
+# endif
 
+class	Form;
 class Bureaucrat
 {
 	private:
@@ -42,6 +46,7 @@ class Bureaucrat
 		int			getGrade(void);
 		void		increment(void);
 		void		decrement(void);
+		void		signForm(Form& fr);
 };
 
 std::ostream& operator<<(std::ostream& os, Bureaucrat& brc);

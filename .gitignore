@@ -7,8 +7,11 @@
 *.o
 *.obj
 
-
+.vscode/
 ex00/app
+ex01/app
+ex02/app
+ex03/app
 # Precompiled Headers
 *.gch
 *.pch

@@ -2,15 +2,14 @@
 NAME=app
 CPP=c++
 CPPFLAGS=-Wall -Wextra -Werror -std=c++98
-SRCS=main.cpp Bureaucrat.cpp 
+SRCS=main.cpp Bureaucrat.cpp Form.cpp
 
-HEADERS=Bureaucrat.hpp
+HEADERS=Bureaucrat.hpp Form.hpp 
 
 OBJS=$(SRCS:.cpp=.o)
 
 
 all: $(NAME)
-
 
 $(NAME): $(OBJS)
 	$(CPP) $(CPPFLAGS) $(OBJS) -o $(NAME)

@@ -11,37 +11,29 @@
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
-int	main()
-{
-	Bureaucrat newObj;
-	Bureaucrat newObj3("0x0",  1);
-	std::cout << newObj << std::endl;
-	try
-	{
-		newObj.decrement();
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
-	std::cout << " ----------------------------- " << std::endl;
-	try
-	{
-		newObj3.increment();
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
-	std::cout << " ----------------------------- " << std::endl;
-	try
-	{
-		Bureaucrat newObj2("0x0",  153);
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
-	return (0);
+int main() {
+    try {
+        Bureaucrat highRank("Alice", 1);
+        Bureaucrat lowRank("Bob", 150);
+        Form formA("Form-A", 50, 100);
+        
+        std::cout << highRank << std::endl;
+        std::cout << lowRank << std::endl;
+        std::cout << formA << std::endl;
+        
+        std::cout << "Attempting to sign form with low rank..." << std::endl;
+        lowRank.signForm(formA);
+
+    } catch (std::exception& e) {
+        std::cerr << "Exception: " << e.what() << std::endl;
+    }
+	std::cout << " ----------------------------------- " << std::endl;
+    try {
+        Form invalidForm("InvalidForm", 0, 200);
+    } catch (std::exception& e) {
+        std::cerr << "Exception: " << e.what() << std::endl;
+    }
+    return 0;
 }
