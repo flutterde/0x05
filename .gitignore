@@ -36,3 +36,4 @@ ex03/app
 *.out
 *.app
 ex02/prompt
+ex02/*_shrubbery
