@@ -6,7 +6,7 @@
 /*   By: ochouati <ochouati@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 17:07:52 by ochouati          #+#    #+#             */
-/*   Updated: 2025/01/07 10:45:28 by ochouati         ###   ########.fr       */
+/*   Updated: 2025/01/07 13:17:04 by ochouati         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,10 @@ class AForm
 				char const	*what() const	throw();	
 		};
 		class	AlreadySignedException : public std::exception {
+			public:
+				char const	*what() const	throw();
+		};
+		class	FormNoTSignedException : public std::exception {
 			public:
 				char const	*what() const	throw();
 		};

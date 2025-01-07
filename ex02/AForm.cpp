@@ -6,7 +6,7 @@
 /*   By: ochouati <ochouati@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 17:07:57 by ochouati          #+#    #+#             */
-/*   Updated: 2025/01/07 10:08:44 by ochouati         ###   ########.fr       */
+/*   Updated: 2025/01/07 13:18:51 by ochouati         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,6 +94,11 @@ const char *AForm::GradeTooLowException::what() const throw()
 const char *AForm::AlreadySignedException::what() const throw()
 {
 	return ("Already Signed Exception");
+}
+
+const char *AForm::FormNoTSignedException::what() const throw()
+{
+	return ("Form Not Signed Exception");
 }
 
 std::ostream&	operator<<(std::ostream& os, const AForm& frm)

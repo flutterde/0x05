@@ -11,29 +11,24 @@
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "AForm.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 int main() {
-    try {
-        Bureaucrat highRank("Alice", 1);
-        Bureaucrat lowRank("Bob", 150);
-        AForm formA("Form-A", 50, 100);
-        
-        std::cout << highRank << std::endl;
-        std::cout << lowRank << std::endl;
-        std::cout << formA << std::endl;
-        
-        std::cout << "Attempting to sign form with low rank..." << std::endl;
-        lowRank.signForm(formA);
-
-    } catch (std::exception& e) {
-        std::cerr << "Exception: " << e.what() << std::endl;
-    }
 	std::cout << " ----------------------------------- " << std::endl;
     try {
-        AForm invalidForm("InvalidForm", 0, 200);
+        Bureaucrat highRank("Alice", 1);
+        ShrubberyCreationForm shForm("sh-tar");
+        highRank.executeForm(shForm);
     } catch (std::exception& e) {
-        std::cerr << "Exception: " << e.what() << std::endl;
+        std::cerr << "->Exception: " << e.what() << std::endl;
     }
+	std::cout << " ----------------------------------- " << std::endl;
+    // try {
+       
+    // } catch (std::exception& e) {
+    //     std::cerr << "Exception: " << e.what() << std::endl;
+    // }
     return 0;
 }

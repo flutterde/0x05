@@ -6,7 +6,7 @@
 /*   By: ochouati <ochouati@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 10:18:02 by ochouati          #+#    #+#             */
-/*   Updated: 2025/01/07 11:36:48 by ochouati         ###   ########.fr       */
+/*   Updated: 2025/01/07 13:16:33 by ochouati         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,18 @@ class ShrubberyCreationForm : public AForm
 		std::string	target;
 	public:
 		ShrubberyCreationForm(void);
+		ShrubberyCreationForm(std::string target);
 		ShrubberyCreationForm(const ShrubberyCreationForm& obj);
 		ShrubberyCreationForm&	operator=(const ShrubberyCreationForm& obj);
 		~ShrubberyCreationForm();
 
+		class	FileOpennignException : public std::exception {
+			public:
+				char const	*what() const	throw();
+		};
+
 		void execute(Bureaucrat const& executor) const;
+		std::string	getTarget();
 };
 
 #endif

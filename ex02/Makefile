@@ -2,7 +2,7 @@
 NAME=app
 CPP=c++
 CPPFLAGS=-Wall -Wextra -Werror -std=c++98
-SRCS=main.cpp Bureaucrat.cpp AForm.cpp PresidentialPardonForm. RobotomyRequestForm.cpp \
+SRCS=main.cpp Bureaucrat.cpp AForm.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp \
 ShrubberyCreationForm.cpp 
 
 HEADERS=Bureaucrat.hpp AForm.hpp PresidentialPardonForm.hpp RobotomyRequestForm.hpp \

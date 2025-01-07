@@ -43,10 +43,11 @@ class Bureaucrat
 		};
 
 		std::string	getName(void);
-		int			getGrade(void);
+		int			getGrade(void) const;
 		void		increment(void);
 		void		decrement(void);
 		void		signForm(AForm& fr);
+		void		executeForm(AForm const & form);
 };
 
 std::ostream& operator<<(std::ostream& os, Bureaucrat& brc);
