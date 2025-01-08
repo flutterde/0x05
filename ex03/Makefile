@@ -3,10 +3,10 @@ NAME=app
 CPP=c++
 CPPFLAGS=-Wall -Wextra -Werror -std=c++98
 SRCS=main.cpp Bureaucrat.cpp AForm.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp \
-ShrubberyCreationForm.cpp 
+ShrubberyCreationForm.cpp Intern.cpp 
 
 HEADERS=Bureaucrat.hpp AForm.hpp PresidentialPardonForm.hpp RobotomyRequestForm.hpp \
-ShrubberyCreationForm.hpp 
+ShrubberyCreationForm.hpp Intern.hpp 
 
 OBJS=$(SRCS:.cpp=.o)
 
@@ -18,14 +18,11 @@ $(NAME): $(OBJS)
 %.o: %.cpp $(HEADERS)
 	$(CPP) $(CPPFLAGS) -c $< -o $@
 
-
 clean:
 	rm -f $(OBJS)
 
-
 fclean: clean
 	rm -f $(NAME)
-
 
 re: fclean all
 
