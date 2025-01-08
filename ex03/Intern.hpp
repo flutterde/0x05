@@ -6,7 +6,7 @@
 /*   By: ochouati <ochouati@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 19:52:05 by ochouati          #+#    #+#             */
-/*   Updated: 2025/01/08 10:00:09 by ochouati         ###   ########.fr       */
+/*   Updated: 2025/01/08 14:45:01 by ochouati         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,17 @@
 
 class Intern
 {
+	private:
+		typedef	AForm* (Intern::*FormCreator)(std::string& target);
+		AForm*	shrubberyCreator(std::string& target);
+		AForm*	robotomyCreator(std::string& target);
+		AForm*	presidentialCreator(std::string& target);
+
 	public:
-		Intern(void); // Default constructor
-		Intern(const Intern& obj); // Copy constructor
-		Intern&	operator=(const Intern& obj); // Copy assignment operator
-		~Intern(); // Destructor
+		Intern(void);
+		Intern(const Intern& obj);
+		Intern&	operator=(const Intern& obj);
+		~Intern();
 		AForm*	makeForm(std::string _form, std::string _target);
 };
 

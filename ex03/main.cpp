@@ -17,27 +17,27 @@
 # include "Intern.hpp"
 
 void testIntern() {
-    Intern someRandomIntern;
+    Intern someIntern;
     AForm* form;
 
-    form = someRandomIntern.makeForm("robotomy request", "Bender");
+    form = someIntern.makeForm("robotomy request", "Bender");
     if (form) {
         std::cout << *form;
         delete form;
     }
-    form = someRandomIntern.makeForm("shrubbery request", "garden");
+    form = someIntern.makeForm("shrubbery request", "Garden");
     if (form) {
         std::cout << *form;
         delete form;
     }
-    form = someRandomIntern.makeForm("presidential pardon", "CitizenX");
+    form = someIntern.makeForm("presidential pardon", "CitizenX");
     if (form) {
         std::cout << *form;
         delete form;
     }
-    form = someRandomIntern.makeForm("invalid form", "target");
+    form = someIntern.makeForm("something", "target");
     if (!form) {
-        std::cout << "Invalid form creation test passed.\n";
+        std::cout << "Invalid form creation test passed." << std::endl;
     }
 }
 

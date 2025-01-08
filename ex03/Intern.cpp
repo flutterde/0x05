@@ -6,7 +6,7 @@
 /*   By: ochouati <ochouati@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 19:52:09 by ochouati          #+#    #+#             */
-/*   Updated: 2025/01/08 10:34:36 by ochouati         ###   ########.fr       */
+/*   Updated: 2025/01/08 14:06:03 by ochouati         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,36 +39,37 @@ Intern &Intern::operator=(const Intern &obj)
 	return (*this);
 }
 
+AForm*	Intern::shrubberyCreator(std::string& target)
+{
+	return (new ShrubberyCreationForm(target));
+}
+
+AForm*	Intern::robotomyCreator(std::string& target)
+{
+	return (new RobotomyRequestForm(target));
+}
+
+AForm*	Intern::presidentialCreator(std::string& target)
+{
+	return (new PresidentialPardonForm(target));
+}
+
 AForm *Intern::makeForm(std::string _form, std::string _target)
 {
-	int x = -1;
-	AForm *newObj;
 	std::string arr[3] = {"shrubbery request", "robotomy request", "presidential pardon"};
+	FormCreator creators[3] = {
+		&Intern::shrubberyCreator,
+		&Intern::robotomyCreator,
+		&Intern::presidentialCreator,
+	};
 	for (int i = 0; i < 3; i++)
 	{
 		if (_form == arr[i])
 		{
-			x = i;
-			break;
+			std::cout << "Intern creates " << _form << std::endl;
+			return ((this->*creators[i])(_target));
 		}
 	}
-
-	switch (x)
-	{
-	case 0:
-		newObj = new ShrubberyCreationForm(_target);
-		break;
-	case 1:
-		newObj = new RobotomyRequestForm(_target);
-		break;
-	case 2:
-		newObj = new PresidentialPardonForm(_target);
-		break;
-	default:
-		newObj = NULL;
-		break;
-	}
-	newObj != NULL ? (std::cout << "Intern creates " << _form << std::endl) \
-	: (std::cerr << "Error: Form name " << _form << " is not recognized!" << std::endl);
-	return (newObj);
+	std::cerr << "Error: Form name " << _form << " is not recognized!" << std::endl;
+	return (NULL);
 }
